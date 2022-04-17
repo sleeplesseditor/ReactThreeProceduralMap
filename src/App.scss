@@ -1,0 +1,12 @@
+.App {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.reset-camera-btn {
+    width: 15%;
+    margin: 10px 0;
+    cursor: pointer;
+}

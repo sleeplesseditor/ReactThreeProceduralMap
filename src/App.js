@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Map from './components/Map';
-import './App.css';
+import './App.scss';
 
 function App() {
   const visRef = React.useRef();
@@ -13,7 +13,7 @@ function App() {
       <Map 
         mapRef={visRef}
       />
-      <button onClick={handleResetCamera}>Reset Camera</button>
+      <button className="reset-camera-btn" onClick={handleResetCamera}>Reset Camera</button>
     </div>
   );
 }
