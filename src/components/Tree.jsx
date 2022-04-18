@@ -1,5 +1,5 @@
 import { CylinderGeometry } from 'three';
-import { mergeBufferGeometries } from 'https://cdn.skypack.dev/three-stdlib@2.8.5/utils/BufferGeometryUtils';
+import { mergeBufferGeometries } from 'three/examples/jsm/utils/BufferGeometryUtils.js';
 
 export const tree = (height, position) => {
     const treeHeight = Math.random() * 1 + 1.25;

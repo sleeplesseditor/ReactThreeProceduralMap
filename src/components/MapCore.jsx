@@ -1,7 +1,5 @@
 import * as React from 'react';
-import { useFrame } from '@react-three/fiber';
 import { DoubleSide } from 'three';
-import { useMapTexture } from './useMapTexture';
 import { EnvMap } from './MapHelpers';
 
 import { useLoader } from '@react-three/fiber';
@@ -12,23 +10,12 @@ import Dirt2 from "../assets/dirt2.jpg";
 const MapContainer = () => {
     const container = React.useRef();
 
-    const { dirtTexture } = useMapTexture(); 
-
-    // useFrame(() => {
-    //     if (!container || !container.current) {
-    //       return;
-    //     }
-    //     // container.current.rotation.x += x; 
-    //     // container.current.rotation.y += y;
-    //     // container.current.rotation.z += z;
-    //   });
-
     return (
         <mesh
             position={[0, 10 * 0.125, 0]}
             receiveShadow={true}
             ref={container}
-            // rotation={[-Math.PI * 0.333 * 0.5]}
+            rotateY={[-Math.PI * 0.333 * 0.5]}
         >
             <cylinderBufferGeometry 
                 attach="geometry"
@@ -46,7 +33,6 @@ const MapContainer = () => {
 }
 
 const MapFloor = () => {
-    const { dirt2Texture } = useMapTexture(); 
     const myref = React.useRef();
 
     return (

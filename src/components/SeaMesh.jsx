@@ -14,6 +14,7 @@ const SeaMesh = () => {
         <mesh
             position={[0, 10 * 0.1, 0]}
             receiveShadow={true}
+            rotateY={-Math.PI * 0.333 * 0.5}
         >
             <cylinderBufferGeometry 
                 attach="geometry"
