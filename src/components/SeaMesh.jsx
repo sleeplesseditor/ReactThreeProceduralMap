@@ -1,29 +1,3 @@
-// let seaTexture = textures.water;
-// seaTexture.repeat = new Vector2(1, 1);
-// seaTexture.wrapS = RepeatWrapping;
-// seaTexture.wrapT = RepeatWrapping;
-
-// let seaMesh = new Mesh(
-//   new CylinderGeometry(17, 17, MAX_HEIGHT * 0.2, 50),
-//   new MeshPhysicalMaterial({
-//     envMap: envmap,
-//     color: new Color("#55aaff").convertSRGBToLinear().multiplyScalar(3),
-//     ior: 1.4,
-//     transmission: 1,
-//     transparent: true,
-//     thickness: 1.5,
-//     envMapIntensity: 0.2, 
-//     roughness: 1,
-//     metalness: 0.025,
-//     roughnessMap: seaTexture,
-//     metalnessMap: seaTexture,
-//   })
-// );
-// seaMesh.receiveShadow = true;
-// seaMesh.rotation.y = -Math.PI * 0.333 * 0.5;
-// seaMesh.position.set(0, MAX_HEIGHT * 0.1, 0);
-// scene.add(seaMesh);
-
 import * as React from 'react';
 import Water from "../assets/water.jpg";
 import { useLoader } from '@react-three/fiber';

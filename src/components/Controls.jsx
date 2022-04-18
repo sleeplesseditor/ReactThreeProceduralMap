@@ -1,53 +1,22 @@
 import * as React from 'react';
-import { extend, useThree, useFrame } from '@react-three/fiber';
-import { TrackballControls } from 'three/examples/jsm/controls/TrackballControls';
-import * as THREE from 'three';
+import { useThree } from '@react-three/fiber';
+import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 
-extend({ TrackballControls });
-
-const ALT_KEY = 18;
-const CTRL_KEY = 17;
-const CMD_KEY = 91;
-
-const Controls = ({}, ref) => {
-  const controls = React.useRef();
-  const { camera, gl } = useThree();
-
-  useFrame(() => {
-    // Update view as Visualisation is interacted with
-    controls.current.update();
-  });
-
-  React.useImperativeHandle(ref, () => ({
-    resetCamera: () => {
-      controls.current.target.set(0, 0, 0);
-      camera.position.set(0, 0, 80);
-
-      camera.up.set(
-        controls.current.up0.x,
-        controls.current.up0.y,
-        controls.current.up0.z
-      );
-    },
-  }));
-
-  return (
-    <trackballControls
-      ref={controls}
-      args={[camera, gl.domElement]}
-      dynamicDampingFactor={0.1}
-      keys={[
-        ALT_KEY, // orbit
-        CTRL_KEY, // zoom
-        CMD_KEY, // pan
-      ]}
-      mouseButtons={{
-        LEFT: THREE.MOUSE.PAN, // make pan the default instead of rotate
-        MIDDLE: THREE.MOUSE.ZOOM,
-        RIGHT: THREE.MOUSE.ROTATE,
-      }}
-    />
-  );
+export const Controls = () => {
+    const { camera, gl } = useThree();
+    React.useEffect(
+      () => {
+        const controls = new OrbitControls(camera, gl.domElement);
+        controls.target.set(0,0,0);
+        controls.dampingFactor = 0.05;
+        controls.enableDamping = true;
+        // controls.minDistance = 3;
+        // controls.maxDistance = 20;
+        return () => {
+          controls.dispose();
+        };
+      },
+      [camera, gl]
+    );
+    return null;
 };
-
-export default React.forwardRef(Controls);
