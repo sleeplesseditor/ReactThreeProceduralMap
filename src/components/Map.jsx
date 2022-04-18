@@ -58,7 +58,7 @@ function hex(height, position) {
     } else if(height > DIRT2_HEIGHT) {
       dirt2Geo = mergeBufferGeometries([geo, dirt2Geo]);
     } 
-  }
+}
 
 const Map = ({}, ref) => {
     for(let i = -20; i <= 20; i++) {

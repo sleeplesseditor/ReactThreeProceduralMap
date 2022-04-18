@@ -21,7 +21,7 @@ const SeaMesh = () => {
                 args={[17, 17, 10 * 0.2, 50]}
             />
             <meshPhysicalMaterial
-                color={new Color("#55aaff").convertSRGBToLinear().multiplyScalar(3)}
+                color={new Color("#55aaff").convertSRGBToLinear().multiplyScalar(10)}
                 envMap={EnvMap}
                 ior={1.4}
                 transmission={1}
