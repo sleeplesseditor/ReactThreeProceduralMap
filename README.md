@@ -15,4 +15,4 @@ npm install
 npm run start
 ```
 
-To load a new map, simply refresh the browser.
+The app is live and can be found [here](https://react-three-procedural-hexagon-map.vercel.app/). To load a new map, simply refresh the browser.
