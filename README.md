@@ -14,3 +14,5 @@ To get the app up and running, follow these instructions:
 npm install
 npm run start
 ```
+
+To load a new map, simply refresh the browser.
